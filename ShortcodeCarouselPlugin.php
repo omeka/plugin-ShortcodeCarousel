@@ -63,8 +63,7 @@ class ShortcodeCarouselPlugin extends Omeka_Plugin_AbstractPlugin
         } else {
             $limit = 10; 
         }
-
-        $params = array('hasImage' => 1);
+        $params['hasImage'] = 1;
         $items = get_records('Item', $params, $limit);
         echo $view->partial('carousel.php', array('items' => $items));
     }
