@@ -34,6 +34,7 @@ class ShortcodeCarouselPlugin extends Omeka_Plugin_AbstractPlugin
 
     public static function carousel($args, $view)
     {
+        static $id_suffix = 0;
         if (isset($args['is_featured'])) {
             $params['featured'] = $args['is_featured'];
         }
@@ -65,6 +66,26 @@ class ShortcodeCarouselPlugin extends Omeka_Plugin_AbstractPlugin
         }
         $params['hasImage'] = 1;
         $items = get_records('Item', $params, $limit);
-        echo $view->partial('carousel.php', array('items' => $items));
+        
+        //handle the configs for jCarousel
+        $configs = array('carousel' => array());
+        
+        //carousel configs
+        if(isset($args['speed'])) {
+            if(is_numeric($args['speed'])) {
+                $configs['carousel']['animation'] = (int) $args['speed'];
+            } else {
+                $configs['carousel']['animation'] = $args['speed'];    
+            }
+        }
+        //autoscroll configs
+        if(isset($args['autoscroll']) && $args['autoscroll'] == 'true') {
+            $configs['autoscroll'] = array();
+            if(isset($args['interval'])) {
+                $configs['autoscroll']['interval'] = (int) $args['interval'];
+            }
+        }
+        echo $view->partial('carousel.php', array('items' => $items, 'id_suffix' => $id_suffix, 'configs' => $configs));
+        $id_suffix++;
     }
 }
