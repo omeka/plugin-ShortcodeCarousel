@@ -19,12 +19,24 @@ class ShortcodeCarouselPlugin extends Omeka_Plugin_AbstractPlugin
         queue_js_file('jquery.jcarousel.min');
     }
 
+    /**
+     * Easy shortcut for carousel of featured items with [featured_carousel]
+     * @param array $args
+     * @param Zend_View $view
+     * @return string HTML to display
+     */
     public static function featuredCarousel($args, $view)
     {
         $args['is_featured'] = 1;
         return self::carousel($args, $view);
     }
 
+    /**
+     * Easy shortcut for carousel of recent items with [recent_carousel]
+     * @param array $args
+     * @param Zend_View $view
+     * @return string HTML to display
+     */
     public static function recentCarousel($args, $view)
     {
         $args['sort'] = 'added';
@@ -32,6 +44,12 @@ class ShortcodeCarouselPlugin extends Omeka_Plugin_AbstractPlugin
         return self::carousel($args, $view);
     }
 
+    /**
+     * Build HTML for the carousel
+     * @param array $args
+     * @param Zend_View $view
+     * @return string HTML to display
+     */
     public static function carousel($args, $view)
     {
         static $id_suffix = 0;
@@ -62,20 +80,20 @@ class ShortcodeCarouselPlugin extends Omeka_Plugin_AbstractPlugin
         if (isset($args['num'])) {
             $limit = $args['num'];
         } else {
-            $limit = 10; 
+            $limit = 10;
         }
         $params['hasImage'] = 1;
         $items = get_records('Item', $params, $limit);
-        
+
         //handle the configs for jCarousel
         $configs = array('carousel' => array());
-        
+
         //carousel configs
         if(isset($args['speed'])) {
             if(is_numeric($args['speed'])) {
                 $configs['carousel']['animation'] = (int) $args['speed'];
             } else {
-                $configs['carousel']['animation'] = $args['speed'];    
+                $configs['carousel']['animation'] = $args['speed'];
             }
         }
         //autoscroll configs
