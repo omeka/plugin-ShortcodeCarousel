@@ -85,7 +85,8 @@ class ShortcodeCarouselPlugin extends Omeka_Plugin_AbstractPlugin
                 $configs['autoscroll']['interval'] = (int) $args['interval'];
             }
         }
-        echo $view->partial('carousel.php', array('items' => $items, 'id_suffix' => $id_suffix, 'configs' => $configs));
+        $html = $view->partial('carousel.php', array('items' => $items, 'id_suffix' => $id_suffix, 'configs' => $configs));
         $id_suffix++;
+        return $html;
     }
 }
