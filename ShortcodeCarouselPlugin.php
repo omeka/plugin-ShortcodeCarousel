@@ -62,7 +62,7 @@ class ShortcodeCarouselPlugin extends Omeka_Plugin_AbstractPlugin
         }
 
         if (isset($args['user'])) {
-            $params['users'] = $args['user'];
+            $params['user'] = $args['user'];
         }
 
         if (isset($args['ids'])) {
