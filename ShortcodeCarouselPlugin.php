@@ -15,6 +15,7 @@ class ShortcodeCarouselPlugin extends Omeka_Plugin_AbstractPlugin
     public function hookPublicHead($args)
     {
         queue_css_file('jcarousel.responsive');
+        queue_css_file('carousel');
         queue_js_file('jcarousel.responsive');
         queue_js_file('jquery.jcarousel.min');
     }
@@ -95,6 +96,9 @@ class ShortcodeCarouselPlugin extends Omeka_Plugin_AbstractPlugin
             } else {
                 $configs['carousel']['animation'] = $args['speed'];
             }
+        }
+        if(isset($args['showtitles']) && $args['showtitles'] == 'true') {
+            $configs['carousel']['showTitles'] = true;
         }
         //autoscroll configs
         if(isset($args['autoscroll']) && $args['autoscroll'] == 'true') {
