@@ -3,18 +3,19 @@
         <ul>
         <?php foreach($items as $item): ?>
             <li>
-            <p>
-                <?php if(isset($configs['carousel']['showTitles']) && $configs['carousel']['showTitles'] ): ?>
-                <a href="<?php echo record_url($item, 'show'); ?>">
-                <?php echo metadata($item, array('Dublin Core', 'Title')); ?>
-                </a>
-            </p>
-            <?php endif; ?>
+            
             <?php echo link_to_item(
                     item_image('square_thumbnail', array(), 0, $item), 
                     array('class' => 'image'), 'show', $item
                     );
             ?>
+                        <p>
+            <?php if(isset($configs['carousel']['showTitles']) && $configs['carousel']['showTitles'] ): ?>
+                <a href="<?php echo record_url($item, 'show'); ?>">
+                <?php echo metadata($item, array('Dublin Core', 'Title')); ?>
+                </a>
+                </p>
+            <?php endif; ?>
             </li>
         <?php endforeach; ?>
         </ul>
