@@ -77,6 +77,10 @@ class ShortcodeCarouselPlugin extends Omeka_Plugin_AbstractPlugin
         if (isset($args['order'])) {
             $params['sort_dir'] = $args['order'];
         }
+        
+        if (isset($args['collection'])) {
+            $params['collection'] = $args['collection'];
+        }
 
         if (isset($args['num'])) {
             $limit = $args['num'];
