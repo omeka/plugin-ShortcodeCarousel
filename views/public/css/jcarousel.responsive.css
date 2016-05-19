@@ -1,13 +1,13 @@
 .jcarousel-wrapper {
-    margin: 20px auto;
+    margin: 20px 0 40px;
+    padding: 10px;
     position: relative;
-    border: 10px solid #fff;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
     -webkit-box-shadow: 0 0 2px #999;
     -moz-box-shadow: 0 0 2px #999;
     box-shadow: 0 0 2px #999;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 
 /** Carousel **/
@@ -29,7 +29,6 @@
 .jcarousel li {
     width: 200px;
     float: left;
-    border: 1px solid #fff;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -39,7 +38,17 @@
 .jcarousel img {
     display: block;
     max-width: 100%;
+    border: 2px solid transparent;
     height: auto !important;
+    margin: auto;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+p.shortcode-carousel-title {
+    margin: 1em 0 0;
+    text-align: center;
 }
 
 /** Carousel Controls **/
@@ -66,18 +75,18 @@
 }
 
 .jcarousel-control-prev {
-    left: 15px;
+    left: 25px;
 }
 
 .jcarousel-control-next {
-    right: 15px;
+    right: 25px;
 }
 
 /** Carousel Pagination **/
 
 .jcarousel-pagination {
     position: absolute;
-    bottom: -40px;
+    bottom: -30px;
     left: 50%;
     -webkit-transform: translate(-50%, 0);
     -ms-transform: translate(-50%, 0);

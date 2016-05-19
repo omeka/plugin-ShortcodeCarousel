@@ -6,11 +6,11 @@
             
             <?php echo link_to_item(
                     item_image('square_thumbnail', array(), 0, $item), 
-                    array('class' => 'image'), 'show', $item
+                    array('class' => 'shortcode-carousel-image'), 'show', $item
                     );
             ?>
-                        <p>
             <?php if(isset($configs['carousel']['showTitles']) && $configs['carousel']['showTitles'] ): ?>
+                <p class="shortcode-carousel-title">
                 <a href="<?php echo record_url($item, 'show'); ?>">
                 <?php echo metadata($item, array('Dublin Core', 'Title')); ?>
                 </a>
@@ -24,7 +24,7 @@
     <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
     <a href="#" class="jcarousel-control-next">&rsaquo;</a>
 
-    <p id="jcarousel-pagination-<?php echo $id_suffix; ?>"></p>
+    <p class="jcarousel-pagination"></p>
 </div>
 
 <script type='text/javascript'>
