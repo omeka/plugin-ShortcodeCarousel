@@ -28,11 +28,13 @@
 </div>
 
 <script type='text/javascript'>
-var carouselConfig = <?php echo json_encode($configs['carousel']);?>;
-var configs = <?php echo json_encode($configs);?>;
-var carousel = jQuery('#jcarousel-<?php echo $id_suffix; ?>').jcarousel(carouselConfig);
-<?php if(isset($configs['autoscroll'])): ?>
-var autoscrollConfig = <?php echo json_encode($configs['autoscroll']);?>;
-carousel.jcarouselAutoscroll(autoscrollConfig);
-<?php endif; ?>
+jQuery(function() {
+    var carouselConfig = <?php echo json_encode($configs['carousel']);?>;
+    var configs = <?php echo json_encode($configs);?>;
+    var carousel = jQuery('#jcarousel-<?php echo $id_suffix; ?>').jcarousel(carouselConfig);
+    <?php if(isset($configs['autoscroll'])): ?>
+    var autoscrollConfig = <?php echo json_encode($configs['autoscroll']);?>;
+    carousel.jcarouselAutoscroll(autoscrollConfig);
+    <?php endif; ?>
+});
 </script>
