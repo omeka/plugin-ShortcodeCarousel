@@ -76,7 +76,7 @@ class ShortcodeCarouselPlugin extends Omeka_Plugin_AbstractPlugin
         if (isset($args['order'])) {
             $params['sort_dir'] = $args['order'];
         }
-        
+
         if (isset($args['collection'])) {
             $params['collection'] = $args['collection'];
         }
@@ -93,20 +93,20 @@ class ShortcodeCarouselPlugin extends Omeka_Plugin_AbstractPlugin
         $configs = array('carousel' => array());
 
         //carousel configs
-        if(isset($args['speed'])) {
-            if(is_numeric($args['speed'])) {
+        if (isset($args['speed'])) {
+            if (is_numeric($args['speed'])) {
                 $configs['carousel']['animation'] = (int) $args['speed'];
             } else {
                 $configs['carousel']['animation'] = $args['speed'];
             }
         }
-        if(isset($args['showtitles']) && $args['showtitles'] == 'true') {
+        if (isset($args['showtitles']) && $args['showtitles'] == 'true') {
             $configs['carousel']['showTitles'] = true;
         }
         //autoscroll configs
-        if(isset($args['autoscroll']) && $args['autoscroll'] == 'true') {
+        if (isset($args['autoscroll']) && $args['autoscroll'] == 'true') {
             $configs['autoscroll'] = array();
-            if(isset($args['interval'])) {
+            if (isset($args['interval'])) {
                 $configs['autoscroll']['interval'] = (int) $args['interval'];
             }
         }
