@@ -15,8 +15,8 @@ class ShortcodeCarouselPlugin extends Omeka_Plugin_AbstractPlugin
     public function hookPublicHead($args)
     {
         queue_css_file('jcarousel.responsive');
-        queue_js_file('jcarousel.responsive');
         queue_js_file('jquery.jcarousel.min');
+        queue_js_file('jcarousel.responsive');
     }
 
     /**
