@@ -30,8 +30,7 @@ Then install it like any other Omeka plugin.
 **hidenavigation**: setting hidenavigation=true will hide the carousel's navigation bar. For example: `[carousel hidenavigation=true]`
 
 ## Item shortcode general options
-The carousel shortcode uses the same options as the Item: is_featured, tags, user, ids, sort, order, collection and num.
-
+The carousel shortcode uses also the following options, defined for Items: **is_featured**, **tags**, **user**, **ids**, **sort**, **order**, **collection** and **num**.
 
 ## Warning
 Use it at your own risk.
