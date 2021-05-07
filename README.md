@@ -1,12 +1,9 @@
 # Shortcode Carousel
 
 ## Description
-Omeka Classic plugin to add a shortcode to create a carousel of items
+Omeka Classic plugin that adds a shortcode to create a carousel of items using jCarousel.
 
-The plugin adds a shortcode to create a carousel of items using jCarousel.
-
-The basic shortcode is `[carousel]`.
-
+The basic shortcode is `[carousel]`. 
 The shortcode `[recent_carousel]` and `[featured_carousel]` are shortcuts to creating a carousel of recent and featured items, respectively.
 
 ## Installation
