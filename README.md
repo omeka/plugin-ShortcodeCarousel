@@ -7,7 +7,7 @@ The basic shortcode is `[carousel]`.
 The shortcode `[recent_carousel]` and `[featured_carousel]` are shortcuts to creating a carousel of recent and featured items, respectively.
 
 ## Installation
-Uncompress files and rename plugin folder "EmailNotification".
+Uncompress files and rename plugin folder "ShortcodeCarousel".
 
 Then install it like any other Omeka plugin.
 
@@ -29,6 +29,14 @@ Then install it like any other Omeka plugin.
 ## Item shortcode general options
 The carousel shortcode uses also the following options, defined for Items: **is_featured**, **tags**, **user**, **ids**, **sort**, **order**, **collection** and **num**.
 
+## Usage outside of Simple Pages
+Theme developers may add support for usage anywhere on their Omeka site. For example, you could create a theme setting called Carousel (as an HTML text area where a user might place the shortcode) and add the following to your homepage or other theme template.
+```
+<?php
+    $t = get_theme_option('Carousel');
+    echo $this->shortcodes($t);
+?>
+```
 ## Warning
 Use it at your own risk.
 
