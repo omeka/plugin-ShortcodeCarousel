@@ -17,7 +17,7 @@ Then install it like any other Omeka plugin.
 - **interval**: when autoscroll is on, interval sets the interval between scrolling in milliseconds. Default is 3000. For example: `[carousel autoscroll=true interval=700]`
 - **pauseonhover**: setting pauseonhover=true will temporarily pause the carousel's scrolling when mouse will be hovering over it. For example: `[carousel pauseonhover=true]`
 - **showtitles**: setting showtitles=true will display the item title in the carousel. For example: `[carousel showtitles=true]`
-- **showtitlesastooltips**: setting showtitlesastooltips=true will use the item title as text for image's tooltip in the carousel. For example: `[carousel showtitlesastooltips=true]`
+- **showtitlesastooltips**: setting showtitlesastooltips=true will use the item title as text for image's tooltip in the carousel. For example: `[carousel  showtitles=true showtitlesastooltips=true]`
 - **hidenavigation**: setting hidenavigation=true will hide the carousel's navigation bar. For example: `[carousel hidenavigation=true]`
 
 ## Item shortcode general options
