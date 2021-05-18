@@ -6,10 +6,16 @@
             .on('jcarousel:create jcarousel:reload', function () {
                 var element = $(this),
                     width = element.innerWidth();
-
-                    if (width >= 600) {
-                        width = width / 3;
+                    // This shows 1 item at a time.
+                    // Divide `width` to the number of items you want to display,
+                    // eg. `width = width / 3` to display 3 items at a time.
+                    if (width >= 900) {
+                        width = width / 5;
+                    } else if (width >= 600) {
+                        width = width / 4;
                     } else if (width >= 350) {
+                        width = width / 3;
+                    } else {
                         width = width / 2;
                     }
 
